@@ -15,11 +15,13 @@
 #########################
 
 # Binaries for programs and plugins
+convert-to-helm-raw-values
 *.exe
 *.exe~
 *.dll
 *.so
 *.dylib
+dist/
 
 # Test binary, built with `go test -c`
 *.test

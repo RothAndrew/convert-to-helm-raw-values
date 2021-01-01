@@ -70,5 +70,4 @@ Flags:
   -h, --help             help for convert-to-helm-raw-values
   -i, --infile string    Input file - Must be compliant with K8s YAML
   -o, --outfile string   Output file - Will be formatted such that it can be used as values.yaml for helm chart incubator/raw. Will always overwrite if the file already exists.
-
 ```
