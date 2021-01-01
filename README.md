@@ -16,6 +16,7 @@ kubectl apply -n mattermost-operator -f https://raw.githubusercontent.com/matter
 This is fine, but what if your Kubernetes development and deployment workflow centers around deploying and managing Helm charts and/or [Helmfiles](https://github.com/roboll/helmfile)? The wonderful little chart `incubator/raw` takes in arbitrary K8s yaml and applies it using the standard Helm format. However, the format for a values file for incubator/raw is different from that of standard Kubernetes YAML.
 
 Kubernetes YAML:
+
 ```yaml
 a: Easy!
 b:
@@ -32,18 +33,18 @@ Needs to be converted to a format that incubator/raw accepts:
 
 ```yaml
 resources:
-    - a: Easy!
-      b:
-        c: 2
-        d:
-            - 3
-            - 4
-    - a: Easy!
-      b:
-        c: 2
-        d:
-            - 3
-            - 4
+  - a: Easy!
+    b:
+      c: 2
+      d:
+        - 3
+        - 4
+  - a: Easy!
+    b:
+      c: 2
+      d:
+        - 3
+        - 4
 ```
 
 ## How
