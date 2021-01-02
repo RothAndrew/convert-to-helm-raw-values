@@ -21,9 +21,13 @@ tasks:
 
   deliver:
     desc: Deliver artifact
+    vars:
+      GITHUB_TOKEN: '{{ coalesce .GITHUB_TOKEN "<no value>" }}'
+    preconditions:
+      - sh: test "{{.GITHUB_TOKEN}}" != "<no value>"
+        msg: Required variable 'GITHUB_TOKEN' not set
     cmds:
-      - echo "Add your logic here"
-      - exit 1
+      - goreleaser --rm-dist
 
   deploy:
     desc: Deploy project
