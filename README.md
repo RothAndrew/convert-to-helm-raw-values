@@ -71,3 +71,9 @@ Flags:
   -i, --infile string    Input file - Must be compliant with K8s YAML
   -o, --outfile string   Output file - Will be formatted such that it can be used as values.yaml for helm chart incubator/raw. Will always overwrite if the file already exists.
 ```
+
+## Contributor Guide
+
+### Releasing new versions
+
+To release a new version, just push a new tag. Automation will cover the rest. Make sure the tag conforms to SemVer. [goreleaser](https://goreleaser.com/) is used in the pipeline to create a GitHub Release.
