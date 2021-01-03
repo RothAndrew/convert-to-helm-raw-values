@@ -1,11 +1,6 @@
-# This is an example .goreleaser.yml file with some sane defaults.
-# Make sure to check the documentation at http://goreleaser.com
 before:
   hooks:
-    # You may remove this if you don't use go modules.
     - go mod download
-    # you may remove this if you don't need go generate
-    - go generate ./...
 builds:
   - env:
       - CGO_ENABLED=0
@@ -13,8 +8,11 @@ builds:
       - linux
       - windows
       - darwin
+    ldflags:
+      - -s -w -X github.com/rothandrew/convert-to-helm-raw-values/cmd.version={{.Version}}
 archives:
-  - replacements:
+  - format: binary
+    replacements:
       darwin: Darwin
       linux: Linux
       windows: Windows

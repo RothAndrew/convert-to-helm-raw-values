@@ -65,12 +65,19 @@ Converts K8s YAML to a version that helm incubator/raw can use
 
 Usage:
   convert-to-helm-raw-values [flags]
+  convert-to-helm-raw-values [command]
+
+Available Commands:
+  help        Help about any command
+  version     Output tool version
 
 Flags:
   -h, --help             help for convert-to-helm-raw-values
   -i, --infile string    Input file - Must be compliant with K8s YAML
   -o, --outfile string   Output file - Will be formatted such that it can be used as values.yaml for helm chart incubator/raw.
                          Will always overwrite if the file already exists.
+
+Use "convert-to-helm-raw-values [command] --help" for more information about a command.
 ```
 
 ## Contributor Guide

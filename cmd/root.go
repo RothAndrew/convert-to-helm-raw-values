@@ -32,7 +32,7 @@ var (
 		Use:   "convert-to-helm-raw-values",
 		Short: "Converts K8s YAML to a version that helm incubator/raw can use",
 		Long:  "Converts K8s YAML to a version that helm incubator/raw can use",
-		Run:   run,
+		Run:   runRoot,
 	}
 	infile  string
 	outfile string
@@ -67,7 +67,7 @@ Will always overwrite if the file already exists.`,
 	_ = rootCmd.MarkFlagRequired("outfile")
 }
 
-func run(_ *cobra.Command, _ []string) {
+func runRoot(_ *cobra.Command, _ []string) {
 	// Read the infile
 	infileContent, err := ioutil.ReadFile(infile)
 	if err != nil {
