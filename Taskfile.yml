@@ -12,7 +12,14 @@ tasks:
   test:
     desc: Run automated tests
     cmds:
-      - go test
+      - go test ./... -cover
+
+  testReport:
+    desc: Open an HTML test report with coverage metrics
+    vars:
+      COVERPROFILE: coverprofile.tmp
+    cmds:
+      - go test -coverprofile={{.COVERPROFILE}} ./... && go tool cover -html={{.COVERPROFILE}} && rm {{.COVERPROFILE}}
 
   secure:
     desc: Run automated security checks
