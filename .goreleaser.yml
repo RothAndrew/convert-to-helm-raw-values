@@ -11,8 +11,7 @@ builds:
     ldflags:
       - -s -w -X github.com/rothandrew/convert-to-helm-raw-values/cmd.version={{.Version}}
 archives:
-  - format: binary
-    replacements:
+  - replacements:
       darwin: Darwin
       linux: Linux
       windows: Windows
